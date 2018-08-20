@@ -2,6 +2,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * 多优先级排序，插入排序
+ */
 public class TH0001 {
     public static void main(String[] args) {
         List<Cat> arrayList = new ArrayList<>();

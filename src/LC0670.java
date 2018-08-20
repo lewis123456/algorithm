@@ -51,8 +51,27 @@ public class LC0670 {
         return total;
     }
 
+    public int maximumSwap2(int num2) {
+        char [] num2Char = Integer.toString(num2).toCharArray();
+        int[] list = new int[10];
+        for (int i=0; i<num2Char.length; ++i) {
+            list[num2Char[i] - '0'] = i;
+        }
+        for (int i=0; i<num2Char.length; ++i) {
+            for (int d = 9; d > num2Char[i] - '0'; --d) {
+                if ((num2Char[i] - '0') < d && 0 != list[d] && i < list[d]) {
+                    char temp = num2Char[i];
+                    num2Char[i] = (char)('0' + d);
+                    num2Char[list[d]] = temp;
+                    return Integer.valueOf(new String(num2Char));
+                }
+            }
+        }
+        return num2;
+    }
+
     public static void main(String[] args) {
         LC0670 lc0670 = new LC0670();
-        System.out.println(lc0670.maximumSwap(98368));
+        System.out.println(lc0670.maximumSwap2(9973));
     }
 }
