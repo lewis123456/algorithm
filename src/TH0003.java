@@ -5,7 +5,6 @@ import java.util.*;
 import java.util.concurrent.*;
 
 /**
- * 阿里巴巴
  * 有n个数据文件，内容格式每行包含用户访问 url以及用户 id
  * example：
  * www.taobao.com/item?id=1	123
