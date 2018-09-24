@@ -4,7 +4,10 @@
  */
 public class TH0004 {
     public static void main(String[] args) {
-        System.out.println(new TH0004().move(5, 'A', 'B', 'C'));
+        long start = System.currentTimeMillis();
+        System.out.println(new TH0004().move(20, 'A', 'B', 'C'));
+        long end = System.currentTimeMillis();
+        System.out.println("waste:" + (end - start));
         return;
     }
 
