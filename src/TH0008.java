@@ -40,6 +40,12 @@ public class TH0008 {
         } else if (null == root.right) {
             left = revertBTreeToList(root.left);
             head = left;
+            index = left;
+            while (index.right != null) {
+                index = index.right;
+            }
+            index.right = root;
+            root.left = index;
         } else {
             left = revertBTreeToList(root.left);
             right = revertBTreeToList(root.right);
