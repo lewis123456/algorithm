@@ -9,15 +9,15 @@ public class LC0025 {
         if (size < k) {
             return head;
         } else {
-            ListNode now = head.next, nextNow = now.next, newHead = head;
-            for (int i=2; i<k; i++) {
-                now.next = newHead;
-                newHead.next = nextNow;
-                newHead = now;
-                now = nextNow;
-                nextNow = now.next;
+            ListNode now = head, realHead = head, next = null;
+            for (int i=1; i<k; i++) {
+                next = now.next;
+                now.next = next.next;
+                next.next = realHead;
+                realHead = next;
             }
-            now = reverseKGroup()
+            now.next = reverseKGroup(now.next, k);
+            return realHead;
         }
     }
 }
